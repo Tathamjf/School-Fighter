@@ -32,7 +32,7 @@ ScriptedImporter:
     sRGBTexture: 1
     spriteMode: 2
     spriteExtrude: 1
-    spriteMeshType: 1
+    spriteMeshType: 0
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
     spritePixelsToUnits: 100
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 638681426643520405
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -134,7 +134,7 @@ ScriptedImporter:
       y: 43
       width: 20
       height: 32
-    spriteID: acc5a42bc644c144eb3403667f99f24e
+    spriteID: 40afa7a28e96aed40b038bc4aba30651
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -155,7 +155,7 @@ ScriptedImporter:
       y: 4
       width: 30
       height: 31
-    spriteID: 6748488d09ee391419673d58e580ba09
+    spriteID: 1486416a301a3d64dab3a99d0da7856b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -176,7 +176,7 @@ ScriptedImporter:
       y: 83
       width: 23
       height: 32
-    spriteID: fe2848a2d9b98424594a2cb81c963ff5
+    spriteID: 311688c65254bcb40a272c2bbbc370c7
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -197,7 +197,7 @@ ScriptedImporter:
       y: 83
       width: 19
       height: 32
-    spriteID: 38f31a0029b737b45bec967609da780d
+    spriteID: 4ac263535e7737e4c9935c94d2c90953
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -218,7 +218,7 @@ ScriptedImporter:
       y: 43
       width: 26
       height: 32
-    spriteID: 661e7fb8f4f7e924c90411baa6e120a9
+    spriteID: 6beba759d28f30540a0bd27531dcb68c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -244,7 +244,7 @@ ScriptedImporter:
         y: 0
         width: 20
         height: 32
-      spriteId: acc5a42bc644c144eb3403667f99f24e
+      spriteId: 40afa7a28e96aed40b038bc4aba30651
     - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
@@ -253,7 +253,7 @@ ScriptedImporter:
         y: 0
         width: 30
         height: 31
-      spriteId: 6748488d09ee391419673d58e580ba09
+      spriteId: 1486416a301a3d64dab3a99d0da7856b
     - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
@@ -262,7 +262,7 @@ ScriptedImporter:
         y: 0
         width: 23
         height: 32
-      spriteId: fe2848a2d9b98424594a2cb81c963ff5
+      spriteId: 311688c65254bcb40a272c2bbbc370c7
     - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
@@ -271,7 +271,7 @@ ScriptedImporter:
         y: 0
         width: 19
         height: 32
-      spriteId: 38f31a0029b737b45bec967609da780d
+      spriteId: 4ac263535e7737e4c9935c94d2c90953
     - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
@@ -280,7 +280,7 @@ ScriptedImporter:
         y: 0
         width: 26
         height: 32
-      spriteId: 661e7fb8f4f7e924c90411baa6e120a9
+      spriteId: 6beba759d28f30540a0bd27531dcb68c
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -291,6 +291,42 @@ ScriptedImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 4096
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
     compressionQuality: 50
     forceMaximumCompressionQuality_BC6H_BC7: 0
     crunchedCompression: 0

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -10,7 +11,17 @@ public class PlayerController : MonoBehaviour
     private bool isWalking;
     private Animator playerAnimator;
 
+    //player olhando para a direita
     private bool playerFaceRight = true;
+
+    //conta a quantidade de ataques simples para o ataque especial
+    private int punchCount;
+
+    // conta o tempo para o ataque especial ser executado
+    private float timeCross = 0.75f;
+
+    bool comboControll;
+
 
     void Start()
     {
@@ -20,12 +31,38 @@ public class PlayerController : MonoBehaviour
         // obtem e inicializa as propriedades do Animator
         playerAnimator = GetComponent<Animator>();
     }
-
-    // Update is called once per frame
+        // Update is called once per frame
     void Update()
     {
         PlayerMove();
         UpdadeAnimator();
+
+
+        // jab ataque
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if (isWalking == false)
+            {
+                // inicializar o temporizador
+                StartCoroutine(crossController());
+
+                if (punchCount < 2)
+                {
+                    PlayerJab();
+                    punchCount++;
+                }
+                
+                else if (punchCount >= 2)
+                {
+                    PlayerCross();
+                    punchCount = 0;
+                }
+
+                //parando o temporizador
+                StopCoroutine(crossController());
+
+            }
+        }
     }
 
 
@@ -74,6 +111,8 @@ public class PlayerController : MonoBehaviour
         // isWalking sem aspas é a variavel criada no codigo acima
         playerAnimator.SetBool("IsWalking", isWalking);
     }
+
+
     void Flip()
     {
         // faz girar o player 180g no eixo y
@@ -85,4 +124,29 @@ public class PlayerController : MonoBehaviour
                       // X   Y   Z
         transform.Rotate(0, 180, 0);
     }
+
+
+    void PlayerJab()
+    {
+        // acessa a animação IsJab no animator da unity e a torna verdadeira, ativa ela
+        playerAnimator.SetTrigger("IsJab");
+
+    }
+
+   
+    void PlayerCross()
+    {
+        playerAnimator.SetTrigger("IsCross");
+    }
+
+    //controla o tempo necessario para a exução de um especial
+    //corrotina = coisas que acontecem ao mesmo tempo 
+    IEnumerator crossController()
+    {
+        comboControll = true;
+        yield return new WaitForSeconds(timeCross);
+        punchCount = 0;
+        comboControll = false;
+    }
+
 }
