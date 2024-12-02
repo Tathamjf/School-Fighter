@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D playerRigidBody;
     public float playerSpeed = 1f;
+    public float currentSpeed;
 
     public Vector2 playerDirection;
 
@@ -22,6 +23,9 @@ public class PlayerController : MonoBehaviour
 
     bool comboControll;
 
+    //indica se o player esta morto
+     private bool isDead;
+
 
     void Start()
     {
@@ -30,6 +34,9 @@ public class PlayerController : MonoBehaviour
         
         // obtem e inicializa as propriedades do Animator
         playerAnimator = GetComponent<Animator>();
+
+        //inia a velocidade do player
+        currentSpeed = playerSpeed;
     }
         // Update is called once per frame
     void Update()
@@ -41,8 +48,7 @@ public class PlayerController : MonoBehaviour
         // jab ataque
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            if (isWalking == false)
-            {
+           
                 // inicializar o temporizador
                 StartCoroutine(crossController());
 
@@ -59,9 +65,7 @@ public class PlayerController : MonoBehaviour
                 }
 
                 //parando o temporizador
-                StopCoroutine(crossController());
-
-            }
+                StopCoroutine(crossController());                      
         }
     }
 
@@ -81,7 +85,7 @@ public class PlayerController : MonoBehaviour
             isWalking = false;
         }
 
-        playerRigidBody.MovePosition(playerRigidBody.position + playerSpeed * Time.fixedDeltaTime * playerDirection);
+        playerRigidBody.MovePosition(playerRigidBody.position + currentSpeed * Time.fixedDeltaTime * playerDirection);
 
     }
 
@@ -147,6 +151,19 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(timeCross);
         punchCount = 0;
         comboControll = false;
+    }
+
+
+    void ZeroSpeed ()
+    {
+        //zerar a velocidade atual -> currentSpeed
+        currentSpeed = 0;
+    }
+
+    void ResetSpeed ()
+    {
+        //resseta a velocidade do player
+        currentSpeed = playerSpeed;
     }
 
 }
